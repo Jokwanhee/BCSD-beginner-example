@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">chapter05</string>
+    <string name="zero">0</string>
+    <string name="dialog">DIALOG</string>
+    <string name="count">COUNT</string>
+    <string name="random">RANDOM</string>
+    <string name="number">number</string>
+    <string name="random_text">Here is a random number between 0 and </string>
+    <string name="toast_msg">Toast Message!</string>
+
+    <string name="dialog_title">알림창 제목</string>
+    <string name="dialog_content">알림창 알림창 알림창 알림창 알림창 알림창 알림창</string>
+    <string name="dialog_positive">Positive</string>
+    <string name="dialog_negative">Negative</string>
+    <string name="dialog_neutral">Neutral</string>
+
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">chapter02</string>
+    <string name="kakao_talk">카카오톡</string>
+    <string name="login">로그인</string>
+    <string name="sign_up">회원가입</string>
+    <string name="id">아이디</string>
+    <string name="password">비밀번호</string>
+    <string name="input_id">아이디를 입력하세요.</string>
+    <string name="input_password">비밀번호를 입력하세요.</string>
+</resources>

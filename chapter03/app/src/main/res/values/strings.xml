@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">chapter03</string>
+    <string name="title">Hello</string>
+    <string name="kakao_talk">KAKAO TALK</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign-up</string>
+    <string name="id">Account</string>
+    <string name="password">Password</string>
+    <string name="input_id">Input yout account</string>
+    <string name="input_password">Input yout password</string>
+
+    <string name="test">test test!</string>
+</resources>

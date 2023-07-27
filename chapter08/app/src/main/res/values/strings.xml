@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">chapter08</string>
+    <string name="toast">toast</string>
+    <string name="count">count</string>
+    <string name="random">random</string>
+    <string name="notification_title">알림 제목</string>
+    <string name="notification_description">알림 내용</string>
+    <string name="notification_big_text_style">큰 텍스트 스타일 적용</string>
+
+    <string name="random_content">Here is a random number between</string>
+</resources>

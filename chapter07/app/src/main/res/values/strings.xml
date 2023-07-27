@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">chapter07</string>
+    <string name="menu_rainbow">무지개</string>
+    <string name="menu_number">숫자</string>
+    <string name="menu_alphabet">알파벳</string>
+
+</resources>

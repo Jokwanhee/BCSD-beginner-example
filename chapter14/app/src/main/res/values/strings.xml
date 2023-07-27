@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">chapter14</string>
+    <string name="error">에러</string>
+    <string name="input_terms">검색어를 입력해주세요.</string>
+</resources>

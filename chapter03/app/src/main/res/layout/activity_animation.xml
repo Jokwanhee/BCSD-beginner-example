@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnimationActivity"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/image_view_android"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        android:src="@drawable/icon_android"
+        />
+
+    <ImageView
+        android:id="@+id/image_view_android_png"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/image_view_android"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        android:src="@drawable/android_google_icon"
+        />
+
+    <Button
+        android:id="@+id/button_zoom_in_to_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="확대 후 축소"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_android"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/button_disappear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사라져"
+        app:layout_constraintTop_toBottomOf="@+id/button_zoom_in_to_out"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/button_translate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이동"
+        app:layout_constraintTop_toBottomOf="@+id/button_disappear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/button_wave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="복합"
+        app:layout_constraintTop_toBottomOf="@+id/button_translate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

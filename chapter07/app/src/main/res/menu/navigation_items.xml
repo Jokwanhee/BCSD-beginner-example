@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_rainbow"
+        android:icon="@drawable/baseline_waves_24"
+        android:title="@string/menu_rainbow" />
+    <item
+        android:id="@+id/action_number"
+        android:icon="@drawable/baseline_format_list_numbered_rtl_24"
+        android:title="@string/menu_number" />
+    <item
+        android:id="@+id/action_alphabet"
+        android:icon="@drawable/baseline_sort_by_alpha_24"
+        android:title="@string/menu_alphabet" />
+</menu>

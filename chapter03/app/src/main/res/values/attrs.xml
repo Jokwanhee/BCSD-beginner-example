@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomView">
+        <attr name="myShapeColor" format="color" />
+        <attr name="myTextColor" format="color" />
+        <attr name="myTextString" format="string" />
+        <attr name="myTextSize" format="string" />
+        <attr name="myStrokeColor" format="color" />
+        <attr name="myStrokeWidth" format="string" />
+    </declare-styleable>
+</resources>

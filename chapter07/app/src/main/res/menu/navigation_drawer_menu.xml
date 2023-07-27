@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/baseline_camera_alt_24"
+            android:title="Import"/>
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/baseline_photo_library_24"
+            android:title="Gallery"/>
+        <item
+            android:id="@+id/nav_slide_show"
+            android:icon="@drawable/baseline_slideshow_24"
+            android:title="Slideshow"/>
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/baseline_precision_manufacturing_24"
+            android:title="Tools"/>
+    </group>
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/baseline_share_24"
+                android:title="Share"/>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/baseline_send_24"
+                android:title="Send"/>
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="애니메이션(animation)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3"/>
+
+    <Button
+        android:id="@+id/button_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="컬러(color)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_animation"
+        app:layout_constraintVertical_bias="0.3"/>
+
+    <Button
+        android:id="@+id/button_drawable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="드로어블(drawable)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_color"
+        app:layout_constraintVertical_bias="0.3"/>
+
+    <Button
+        android:id="@+id/button_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메뉴(menu)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_drawable"
+        app:layout_constraintVertical_bias="0.3"/>
+
+    <Button
+        android:id="@+id/button_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="문자열(String)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_menu"
+        app:layout_constraintVertical_bias="0.3"/>
+
+    <Button
+        android:id="@+id/button_custom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="커스텀뷰(CustomView)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_string"
+        app:layout_constraintVertical_bias="0.3"/>
+
+
+    <Button
+        android:id="@+id/button_practice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="실습 3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_custom"
+        app:layout_constraintVertical_bias="0.3"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

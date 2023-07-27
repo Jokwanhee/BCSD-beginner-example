@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="vm"
+            type="com.example.chapter14.viewmodel.RepoViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/repo_name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/github_image_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Username" />
+
+        <TextView
+            android:id="@+id/repo_description_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="#5A5A5A"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/github_image_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/repo_name_text_view"
+            tools:text="Description" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/star_count_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:drawableStart="@drawable/baseline_star_outline_24"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@id/repo_description_text_view"
+            app:layout_constraintTop_toBottomOf="@id/repo_description_text_view"
+            tools:text="300" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fork_count_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:drawableStart="@drawable/baseline_fork_right_24"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/star_count_text_view"
+            app:layout_constraintTop_toBottomOf="@id/repo_description_text_view"
+            tools:text="300" />
+
+        <ImageView
+            android:id="@+id/github_image_view"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/github"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/repo_name_text_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

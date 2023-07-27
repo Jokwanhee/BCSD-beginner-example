@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">chapter04</string>
+    <string name="zero">0</string>
+    <string name="toast">TOAST</string>
+    <string name="count">COUNT</string>
+    <string name="random">RANDOM</string>
+    <string name="number">number</string>
+    <string name="random_text">Here is a random number between 0 and </string>
+    <string name="toast_msg">Toast Message!</string>
+</resources>
