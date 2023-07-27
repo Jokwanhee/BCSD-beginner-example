@@ -24,30 +24,34 @@ Android 에서 사용되는 IDE 인 Android Studio의 설치와 Android 의 다�
 
 [LinearLayout  |  Android Developers](https://developer.android.com/guide/topics/ui/layout/linear?hl=ko)
 
+<img src="./참조 파일/linear.png" width="350" height="300">
 
-![Alt text](/참조%20파일/linear.png)
 - RelativeLayout
 
 [RelativeLayout  |  Android Developers](https://developer.android.com/guide/topics/ui/layout/relative?hl=ko)
 
-![Alt text](/참조%20파일/relative.png)
+<img src="./참조 파일/relative.png" width="350" height="300">
+
 - FrameLayout
 
 [FrameLayout  |  Android Developers](https://developer.android.com/reference/android/widget/FrameLayout)
 
-![Alt text](/참조%20파일/frame.png)
+<img src="./참조 파일/frame.png" width="350" height="300">
+
 - ConstraintLayout 
 
 [ConstraintLayout  |  Android Developers](https://developer.android.com/training/constraint-layout?hl=ko)
 
 
-![Alt text](/참조%20파일/constraint.png)
+<img src="./참조 파일/constraint.png" width="350" height="300">
+
 ## 3. Style과 Theme, Resource
 [앱 리소스 개요  |  Android 개발자  |  Android Developers](https://developer.android.com/guide/topics/resources/providing-resources?hl=ko)
 
 리소스 파일을 가져오기 위해서 R클래스의 정적 변수들을 가져오는 것을 배울 수 있다. 또한, 속성으로 Theme와 Style을 지정하여 좀 더 편리하고 일관적인 디자인을 부여할 수 있다.
 
 ### 실습 : 세로-가로 모드, 글꼴 크기, 디스플레이 크기, 언어 대응
-<img src="chapter3_practice1.gif" width="175" height="350">
-<img src="chapter3_practice2.gif" width="175" height="350">
+<img src="./참조 파일/chapter3_practice1.gif" width="175" height="350">
+<img src="./참조 파일/chapter3_practice2.gif" width="175" height="350">
+
 
