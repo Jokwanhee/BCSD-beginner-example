@@ -1,15 +1,15 @@
 # BCSD-beginner-example
 ## 목차
-[🚀 1. Kotlin and Android](#🚀-1-about-kotlin-and-android)  
-[🚀 2. View : Wiget and Layout](#🚀-2-view-widget-and-layout)   
-[🚀 3. Rescoure : Style and Theme etc...](#🚀-3-style과-theme-resource)   
-[🚀 4. Activity and View 상호작용](#🚀-4-activity와-view-상호작용)   
-[🚀 5. Fragment and Dialog](#🚀-5-fragment-와-dialog)   
-[🚀 6. ListView and RecyclerView](#🚀-6-listview-and-recyclerview)   
-[🚀 7. BottomNavigation, ViewPager2 and TabLayout](#🚀-7-bottomnavigation-and-viewpager2-tablayout)   
-[🚀 8. Notification](#🚀-8-notification)   
-[🚀 9. ContentProvider and MediaStore](#🚀-9-파일관리-contentprovider-mediastore)   
-[🚀 10. Service, BroadcastReceiver and MediaPlayer](#🚀-10-foregroundservice-broadcastreceiver-mediaplayer)
+[🚀 1. Kotlin and Android](#-1-about-kotlin-and-android)  
+[🚀 2. View : Wiget and Layout](#-2-view-widget-and-layout)   
+[🚀 3. Rescoure : Style and Theme etc...](#-3-style과-theme-resource)   
+[🚀 4. Activity and View 상호작용](#-4-activity와-view-상호작용)   
+[🚀 5. Fragment and Dialog](#-5-fragment-와-dialog)   
+[🚀 6. ListView and RecyclerView](#-6-listview-and-recyclerview)   
+[🚀 7. BottomNavigation, ViewPager2 and TabLayout](#-7-bottomnavigation-and-viewpager2-tablayout)   
+[🚀 8. Notification](#-8-notification)   
+[🚀 9. ContentProvider and MediaStore](#-9-파일관리-contentprovider-mediastore)   
+[🚀 10. Service, BroadcastReceiver and MediaPlayer](#-10-foregroundservice-broadcastreceiver-mediaplayer)
 ___
 ## 🚀 1. About Kotlin and Android
 [Kotlin  |  Kotlin Docs](https://kotlinlang.org/docs/home.html)
