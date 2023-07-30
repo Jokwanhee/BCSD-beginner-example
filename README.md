@@ -1,5 +1,5 @@
-# BCSD-beginner-example
-## 목차
+#  BCSD-beginner-example 😎
+## 👀 목차
 [🚀 1. Kotlin and Android](#-1-about-kotlin-and-android)  
 [🚀 2. View : Wiget and Layout](#-2-view-widget-and-layout)   
 [🚀 3. Rescoure : Style and Theme etc...](#-3-style과-theme-resource)   
@@ -9,7 +9,11 @@
 [🚀 7. BottomNavigation, ViewPager2 and TabLayout](#-7-bottomnavigation-and-viewpager2-tablayout)   
 [🚀 8. Notification](#-8-notification)   
 [🚀 9. ContentProvider and MediaStore](#-9-파일관리-contentprovider-mediastore)   
-[🚀 10. Service, BroadcastReceiver and MediaPlayer](#-10-foregroundservice-broadcastreceiver-mediaplayer)
+[🚀 10. Service, BroadcastReceiver and MediaPlayer](#-10-foregroundservice-broadcastreceiver-mediaplayer)   
+[🚀 11. Thread, Coroutine](#-11-thread-coroutine)   
+[]()   
+[]()   
+[]()
 ___
 ## 🚀 1. About Kotlin and Android
 [Kotlin  |  Kotlin Docs](https://kotlinlang.org/docs/home.html)
@@ -315,9 +319,9 @@ Android 10(Q, API 29) 이전과 이후로 저장소 모양이 Legacy Storage 에
 Android 12를 타겟팅하는 앱은 몇 가지 특수한 사례를 제외하고 백그라운드에서 실행되는 동안 더 이상 포그라운 서비스를 시작할 수 없다. 자세한 내용은 위에 링크를 참조하자.
 
 
-
 ### MediaPlayer
 [MediaPlayer 개요 |  Android Developers](https://developer.android.com/guide/topics/media/mediaplayer?hl=ko#basics)
+
 애플리케이션 리소스(원시 리소스)에 저장된 미디어 파일, 파일 시스템의 독립형 파일 또는 네트워크 연결을 통해 들어오는 데이터 스트림에서 모두 MediaPlayer API를 사용하여 오디오 또는 동영상을 재생할 수 있습니다.
 
 ### SAF(Storage Access Framework)
@@ -350,13 +354,80 @@ Android 13(TIRAMISU, API 33) 부터 사용이 가능하다. Photo Picker 의 이
 ### Android
 - Service
 
-    [서비스 개요 | Android 개발자 | Android Developers](https://developer.android.com/guide/components/services?hl=ko)
+    [서비스 개요 |  Android Developers](https://developer.android.com/guide/components/services?hl=ko)
 
 - BroadcastReceiver
 
-    [브로드캐스트 개요 | Android 개발자 | Android Developers](https://developer.android.com/guide/components/broadcasts?hl=ko)
+    [브로드캐스트 개요 |  Android Developers](https://developer.android.com/guide/components/broadcasts?hl=ko)
 ### 🐼 실습 : 뮤직 플레이어 만들기
 실습 9의 연장선으로 노래 플레이 알림을 띄우고 배터리가 줄었을 때, 경고 알림을 사용자에게 알려준다.
 
 <img src="./참조 파일/chapter10_practice1.gif" width="175" height="350">
 <img src="./참조 파일/chapter10_practice2.gif" width="175" height="350">
+
+## 🚀 11. Thread, Coroutine 
+Thread와 Coroutine을 사용함으로써 동시성 프로그램을 이해하고, 비동기적으로 실행되는 것을 배울 수 있다. Coroutine 을 android 에서 사용하면서 Thread 의 Blocking의 단점을 보완하고 효율적인 비동기 실행을 할 수 있다.
+
+
+### Thread
+[Thread |  Android Developers](https://developer.android.com/guide/components/processes-and-threads?hl=ko)
+
+Android 에서는 Thread 를 사용하는 데 있어서 중요한 규칙들이 존재한다.
+- UI 스레드를 차단하지 마세요.
+    - 앱이 일정시간 동안 반응이 없을 경우 ANR이 발생할 수 있다.
+- UI 스레드 외부에서 Android UI 도구 키트에 액세스하지 마세요.
+
+### 워크 스레드에서 UI 스레드 접근하는 방법
+
+- [Activity.runOnUiThread(Runnable)](https://developer.android.com/reference/android/app/Activity#runOnUiThread(java.lang.Runnable))
+- [View.post(Runnable)](https://developer.android.com/reference/android/app/Activity#runOnUiThread(java.lang.Runnable))
+- [View.postDelayed(Runnable, long)](https://developer.android.com/reference/android/view/View?hl=ko#postDelayed(java.lang.Runnable,%20long))
+- [Handler](https://developer.android.com/reference/android/os/Handler)
+
+### Coroutine
+[Coroutine |  Android Developers](https://developer.android.com/kotlin/coroutines?hl=ko)   
+[Coroutine |  Kotlin Documents](https://kotlinlang.org/docs/coroutines-guide.html)
+
+Coroutine은 비동기적으로 실행되는 코드를 간소화하기 위해 Android에서 사용할 수 있는 동시 실행 설계 패턴이다. Coroutine은 Kotlin 버전 1.3에 추가되었으며 다른 언어에서 확립된 개념을 기반으로 한다.
+
+### ListAdapter & DiffUtil
+[ListAdapter |  Android Developers](https://developer.android.com/reference/androidx/recyclerview/widget/ListAdapter)   
+[DiffUtil |  Android Developers](https://developer.android.com/reference/androidx/recyclerview/widget/DiffUtil)
+
+RecyclerView 기반으로 만들어진 ListAdapter는 데이터 변경 사항 처리를 좀 더 효율적으로 처리할 수 있다. DiffUtil 을 사용하여 삽입, 삭제 등 메인 Thread에서 무엇이 처리되는 지 확인 가능하다.
+
+DiffUtil 은 두 데이터셋을 받아 그 차이를 계산해주는 클래스이다. 그렇기 때문에 ListAdpater를 RecyclerView.Adapter 대신 사용하여 데이터 비교로 변한 부분을 효율적으로 찾아낼 수 있다.
+
+
+### Kotlin
+- ListAdapter & DiffUtil
+    - `DiffUtil.ItemCallback`
+    - `submitList()`
+- 타이머
+    - `timer()`
+    - `fixedRateTimer()`
+- LinearLayoutManager
+    - `reverseLayout `
+    - `stackFromEnd `
+- Thread
+    - `Thread{}.start()`
+- Coroutine
+    - `CoroutineScope.lanch`
+    - `delay()`
+- System
+    - `currentTimeMillis()`
+- SystemClock
+    - `uptimeMillis`
+    - `elapsedRealtime`
+### Android
+- Timer   
+    [Timer |  Android Developers](https://developer.android.com/reference/java/util/Timer)
+
+- SystemClock   
+    [SystemClock |  Android Developers](https://developer.android.com/reference/android/os/SystemClock)
+
+
+
+### 🐼 실습 : 스톱워치 만들기
+
+<img src="./참조 파일/chapter11_practice.gif" width="175" height="350">
