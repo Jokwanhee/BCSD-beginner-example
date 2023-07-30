@@ -11,7 +11,7 @@
 [🚀 9. ContentProvider and MediaStore](#-9-파일관리-contentprovider-mediastore)   
 [🚀 10. Service, BroadcastReceiver and MediaPlayer](#-10-foregroundservice-broadcastreceiver-mediaplayer)   
 [🚀 11. Thread, Coroutine](#-11-thread-coroutine)   
-[]()   
+[🚀 12. Design Pattern, Jetpack Component](#-12-design-pattern-databinding-room-viewmodel-livedata)   
 []()   
 []()
 ___
@@ -433,7 +433,7 @@ DiffUtil 은 두 데이터셋을 받아 그 차이를 계산해주는 클래스�
 <img src="./참조 파일/chapter11_practice.gif" width="175" height="350">
 
 
-## 12. Design Pattern, DataBinding, Room, ViewModel, LiveData
+## 🚀 12. Design Pattern, DataBinding, Room, ViewModel, LiveData
 안드로이드에서 주로 사용하는 디자인 패턴에 대해서 살펴보고, Android Jetpack Component 몇 가지를 살펴볼 것이다. 추가적으로 데이터를 관리하기 위해 ViewModel과 LiveData를 살펴봄으로써 데이터를 어떤 식으로 보존하는 지 배울 수 있다.
 
 
