@@ -431,3 +431,66 @@ DiffUtil 은 두 데이터셋을 받아 그 차이를 계산해주는 클래스�
 ### 🐼 실습 : 스톱워치 만들기
 
 <img src="./참조 파일/chapter11_practice.gif" width="175" height="350">
+
+
+## 12. Design Pattern, DataBinding, Room, ViewModel, LiveData
+안드로이드에서 주로 사용하는 디자인 패턴에 대해서 살펴보고, Android Jetpack Component 몇 가지를 살펴볼 것이다. 추가적으로 데이터를 관리하기 위해 ViewModel과 LiveData를 살펴봄으로써 데이터를 어떤 식으로 보존하는 지 배울 수 있다.
+
+
+### Design Pattern
+- [MVC(Model-View-Controller)](https://atom-feet-3b2.notion.site/MVC-3aaaf18de4db4481b258f2aacb43eadb?pvs=4)   
+    : 안드로이드 초기 구조로 자연스럽게 적용되었다. 또한, 안드로이드와 관계 없이 널리 사용되는 구조이다. 규모가 작고 앱을 빠르게 진행하는 프로젝트는 MVC 패턴이 적합한 것 같다. 하지만 유지보수가 여럽고 결합도가 높아 많이 사용되지는 않는다.
+- [MVP(Model-View-Presenter)](https://atom-feet-3b2.notion.site/MVP-f0b483b106cc4892b9c04b8ce9a752a2?pvs=4)  
+    : 단위 테스트가 어려웠던 MVC 패턴의 문제점을 해결하고자 나타난 패턴이다. 이는 관심사를 분리하는 역할을 해주어 코드 가독성을 높이는 데 큰 역할을 하였다. 비즈니스 로직이 Presenter에 모이는 경향이 있어서 코드가 비대해질 수 있다.
+- [MVVM(Model-View-ViewModel)](https://atom-feet-3b2.notion.site/MVVM-708ba816031b4af8adab413ebc9eb43a?pvs=4)   
+    : MVP 패턴에서 View와 Presenter는 1대1 매칭이라 강하게 결합되어있는데, 이를 보완하기 위해서 MVVM 패턴을 알아야 한다. 
+- [MVI(Model-View-Intent)](https://atom-feet-3b2.notion.site/MVI-c9022cec947842bcae29c4a45af07990?pvs=4)   
+    : MVVM 패턴의 상태 문제와 부수효과라는 문제점이 있다. 이러한 문제점을 보완하기 위해서 JavaScript의 Redux 기반으로 MVI 패턴이 등장하였다.
+### DataBinding, Jetpack Component
+[DataBinding  | Android Developers](https://developer.android.com/topic/libraries/data-binding?hl=ko)
+
+데이터 결합 라이브러리는 프로그래매틱 방식이 아니라 선언적 형식으로 레이아웃의 UI 구성요소를 앱의 데이터 소스와 결합할 수 있는 지원 라이브러리이다.
+
+추가적으로 [ViewBinding](https://developer.android.com/topic/libraries/view-binding?hl=ko) 에 대해서도 알아볼 필요가 있다.
+
+### Room, Jetpack Component
+[Room을 사용하여 로컬 데이터베이스에 데이터 저장  |  Android Developers](https://developer.android.com/training/data-storage/room?hl=ko)
+
+상당한 양의 구조화된 데이터를 처리하는 앱은 데이터를 로컬에 유지하여 매우 큰 이익을 얻을 수 있다. 즉, 로컬 데이터베이스(DB)이다.
+
+### ViewModel, Jetpack Component
+[ViewModel  | Android Developers](https://developer.android.com/topic/libraries/architecture/viewmodel?hl=ko)
+
+ViewModel 클래스는 수명주기를 고려하여 UI 관련 데이터를 저장하고 관리하도록 설계되었다. ViewModel 클래스를 사용하면 화면 회전과 같이 구성을 변경할 때도 데이터를 유지할 수 있다.
+
+
+### LiveData, Jetpack Component
+[LiveData  | Android Developers](https://developer.android.com/topic/libraries/architecture/livedata?hl=ko)
+
+관찰 가능한 일반 클래스와 달리 LiveData는 수명 주기를 인식합니다. 즉, 액티비티, 프래그먼트, 서비스 등 다른 앱 구성요소의 수명 주기를 고려합니다. 수명 주기 인식을 통해 LiveData는 액티비티 수명 주기 상태에 있는 앱 구성요소 관찰자만 업데이트합니다. 
+
+요즘에는 Jetpack Compose가 대세이기 때문에 LiveData 보다는 Flow를 많이 사용한다. [Flow](https://developer.android.com/kotlin/flow?hl=ko) 에 대해서 공부를 추가적을 해보는 것도 중요하다.
+
+### Coil
+[Coil](https://coil-kt.github.io/coil/)
+
+Coil은 Coroutine Image Loader의 약자이다. 즉, 코루틴으로 만들어진 가벼운 이미지 로딩 라이브러리이다. Glide과 비교될 수 있다. 각각의 장단점을 살펴보고 유용한 라이브러리를 적용해서 사용하는 것 또한 개발의 재미...
+
+### Parcelize
+[Parcelable 구현 생성기  |  Kotlin  |  Android Developers](https://developer.android.com/kotlin/parcelize?hl=ko)
+
+Parcelize 는 Parcelable 클래스를 직렬화 시 Container 역활을 하는 클래스가 된다. 직렬화하면 Serializable 이 떠오른다. Serializalbe 과 Parcelable의 장단점을 살펴보고 Parcelize 플러그인을 사용하여 안드로이드 개발에 적용해보자.
+
+### Android
+- Pattern
+    - Repository Pattern
+- DataBinding
+    - `@BindingAdapter()`
+- ViewModel
+    - `ViewModelProvider.Factory`
+    - `by viewModels()`
+
+### 🐼 실습 : 단어장 만들기
+
+<img src="./참조 파일/chapter12_practice1.gif" width="175" height="350">
+<img src="./참조 파일/chapter12_practice2.gif" width="175" height="350">
