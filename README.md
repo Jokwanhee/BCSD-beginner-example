@@ -497,6 +497,10 @@ Presentation Layer - Domain Layer - Data Layer 로 계층을 구조화하여 Lay
 
 Hilt는 Google 의 Dagger 기반으로 만든 Dependency Injection 라이브러리이다. 추가적으로 Hilt는 Android 앱에 특화된 DI이며, Android class 에 의존성을 주입을 지원하고 생명 주기를 자동으로 관리한다.
 
+### Material Design
+[Material Design](https://m2.material.io/develop/android/)
+
+Material은 디자인 지원 라이브러리이다. 다양한 UI를 제공하며 일관적인 디자인을 보인다. 기존에 Android에서 사용 된 View 말고 Material에서 지원하는 디자인을 사용해보자!
 
 ### SAF(Storage Access Framework)
 [SAF  |  Android Developers](https://developer.android.com/guide/topics/providers/document-provider?hl=ko)
@@ -521,9 +525,70 @@ Android 13(TIRAMISU, API 33) 부터 사용이 가능하다. Photo Picker 의 이
 <img src="./참조 파일/chapter13_practice1.gif" width="175" height="350">
 <img src="./참조 파일/chapter13_practice2.gif" width="175" height="350">
 
-## 🚀 14. 
+## 🚀 14. 난독화와 네트워크 통신
+안드로이드 앱 소스 난독화는 안드로이드 앱의 소스 코드를 분석하기 어렵게 만들기 위한 기술이다. 이를 통해 앱의 소스 코드를 더욱 안전하게 보호할 수 있다. 안드로이드에서는 Proguard를 이용하여 난독화를 진행한다.
 
-### 🐼 실습 : 
+네트워크 통신을 위해서 여러가지 라이브러리를 사용할 수 있다. 여기서 배우는 라이브러리는 Retrofit 이고 Json을 파싱할 Gson 라이브러리에 대해서도 알아볼 수 있다.
+
+### Retrofit
+[Retrofit  |  GitHub](https://square.github.io/retrofit/)
+
+OKHttp 를 네트워크 레이어로 활용하는 상위호환 라이브러리이다. 네트워크 통신을 편하게 할 수 있도록 도와주는 기능이 많이 있다. OkHttp 라이브러리에 대해서 알아보는 것도 좋을 것 같다.
+
+추가적으로 만약에 네트워크 통신의 이해가 낮다면 안드로이드의 소켓 통신 방식을 공부해보면 이해하는 데 도움이 될 수 있다. 
+
+### Gson
+[Gson  |  GitHub](https://github.com/google/gson)
+
+JSON 에서는 데이터를 찾을 때, 파싱하게 된다. (파싱은 데이터의 이름을 찾는 것을 의미한다.) 조건문이나 반복문을 사용해서 데이터를 찾아와도 되지만, 안드로이드에서는 JsonObject 를 지원한다. 하지만 우리는 GSON 라이브러리를 대표적으로 사용한다. 이유는 편리하다.
+
+### Github Open API
+[GitHub REST API - GitHub Docs](https://docs.github.com/ko/rest)
+
+Github에서 지원하는 Open API 이다. Github Token 을 사용하면 호출 제한을 늘릴 수 있다.
+
+**실습에서 사용 된 API**
+- Search User   
+https://docs.github.com/ko/rest/search?apiVersion=2022-11-28#search-users
+
+- User Repositories   
+https://docs.github.com/ko/rest/repos/repos?apiVersion=2022-11-28#list-repositories-for-a-user
+### 디바운싱
+디바운싱은 검색 기능을 사용할 때, 매번 한 글자마다 서버에 요청하면 서버에 부하가 많아지므로 이를 해결하기 위해 사용할 수 있는 기법이다. "banana"를 검색하는데, b, a, n, a, n, a 한 글자 검색될 때마다 api를 호출하는 것은 서버에 부하를 가할 수 있다. 그러므로 한 글자 한 글자 입력될 때마다 딜레이를 주는 것이다.
+
+디바운싱을 찾아보면 추가적으로 쓰로틀링 개념도 같이 공부할 수 있을 것이다.
+
+### 페이징 처리
+만약 10개의 게시판이 존재해서 10개의 게시판을 보여주려면 전체를 불러오면 된다. 하지만 게시판이 100개, 1000개 ... 100만개 까지 늘어난다면, 전체를 불러오기에는 오래 걸린다. 그러므로 page를 나누고 원하는 pageSize 를 가져와 페이지 처리를 하게 된다.
+
+### Tip: Retrofit + Proguard 의 문제
+Proguard로 난독화를 진행하면 앱의 리소스를 최적화하기 위해서 클래스를 줄이고 이름을 변경한다. 여기서 Retrofit 클래스의 이름이 변경되어서 오류가 발생할 수 있으므로 주의해서 사용하자.
+
+### Tip: 디바운싱
+serachUser() 는 retrofit 호출이다. Handler runnable 객체를 사용하여 0.3초 딜레이를 주어서 "banana"를 검색할 때, "b" 를 입력하고 0.3초 이내에 다음 글자가 입력되면 serachUser() 호출 없이 다음 글자인 "ba" 에 대한 응답을 기다리는 것이다. 
+
+다양한 방식으로 처리할 수 있다.
+
+```kotlin
+private val handler = Handler(Looper.getMainLooper())
+
+val runnable = Runnable {
+    searchUser()
+}
+
+binding.searchEditText.addTextChangedListener {
+    handler.removeCallbacks(runnable)
+    handler.postDelayed(
+        runnable,
+        300
+    )
+}
+```
+
+### Tip: 페이징 처리
+RecyclerView 로 사용자의 레포지토리를 나열하는데, RecyclerView 콜백 함수로 addOnScrollListener 라는 콜백 함수가 있다. 스크롤 될 때 이벤트를 확인할 수 있다. 이 메서드를 사용하여 해결해보자.
+
+### 🐼 실습 : GitHub 사용자 검색 및 레포지토리 목록
 
 <img src="./참조 파일/chapter14_practice1.gif" width="175" height="350">
 <img src="./참조 파일/chapter14_practice2.gif" width="175" height="350">
