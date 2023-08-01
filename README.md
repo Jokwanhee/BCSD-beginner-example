@@ -12,8 +12,8 @@
 [🚀 10. Service, BroadcastReceiver and MediaPlayer](#-10-foregroundservice-broadcastreceiver-mediaplayer)   
 [🚀 11. Thread, Coroutine](#-11-thread-coroutine)   
 [🚀 12. Design Pattern, Jetpack Component](#-12-design-pattern-databinding-room-viewmodel-livedata)   
-[]()   
-[]()
+[🚀 13. CleanArchitecture, DI:Hilt, 이미지 처리](#-13-cleanarchitecture-dihilt-이미지-처리)   
+[🚀 14. 난독화와 네트워크 통신](#-14-난독화와-네트워크-통신)
 ___
 ## 🚀 1. About Kotlin and Android
 [Kotlin  |  Kotlin Docs](https://kotlinlang.org/docs/home.html)
