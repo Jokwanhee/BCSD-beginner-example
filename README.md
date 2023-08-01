@@ -324,16 +324,6 @@ Android 12를 타겟팅하는 앱은 몇 가지 특수한 사례를 제외하고
 
 애플리케이션 리소스(원시 리소스)에 저장된 미디어 파일, 파일 시스템의 독립형 파일 또는 네트워크 연결을 통해 들어오는 데이터 스트림에서 모두 MediaPlayer API를 사용하여 오디오 또는 동영상을 재생할 수 있습니다.
 
-### SAF(Storage Access Framework)
-[SAF  |  Android Developers](https://developer.android.com/guide/topics/providers/document-provider?hl=ko)
-
-SAF는 사용자가 선호하는 문서 저장소 제공자 전체에서 문서, 이미지 및 각종 다른 파일을 탐색하고 여는 작업을 간편하게 해준다. 일관된 방식으로 selector UI 를 사용하여 사용자에게 쉬운 UI 제공한다.
-
-### Photo Picker 사용하기
-[Photo Picker  |  Android Developers](https://developer.android.com/training/data-storage/shared/photopicker?hl=ko)
-
-Android 13(TIRAMISU, API 33) 부터 사용이 가능하다. Photo Picker 의 이점은 SAF와 달리 새로운 UI를 제공하며, 해당 버전보다 아래라면 자동으로 SAF를 진행한다.
-
 ### Kotlin
 - Permission   
     - `READ_EXTERNAL_STORAGE`
@@ -494,3 +484,46 @@ Parcelize 는 Parcelable 클래스를 직렬화 시 Container 역활을 하는 �
 
 <img src="./참조 파일/chapter12_practice1.gif" width="175" height="350">
 <img src="./참조 파일/chapter12_practice2.gif" width="175" height="350">
+
+## 🚀 13. CleanArchitecture, DI(Hilt), 이미지 처리
+안드로이드 아키텍처는 클린 아키텍처 구조의 예시로 구조화할 수 있다. 여기서 의존성 주입인 Hilt를 사용하여 종속 항목을 재사용하고 관리할 수 있다. 또한, 여러가지 방법으로 이미지를 불러와 이미지를 처리할 수 있다.
+
+### 클린 아키텍처   
+Presentation Layer - Domain Layer - Data Layer 로 계층을 구조화하여 Layer 마다 역할을 두고 관심사를 분리한다. 
+
+### Hilt
+
+[Dependency injection with Hilt | Android Developers](https://developer.android.com/training/dependency-injection/hilt-android)
+
+Hilt는 Google 의 Dagger 기반으로 만든 Dependency Injection 라이브러리이다. 추가적으로 Hilt는 Android 앱에 특화된 DI이며, Android class 에 의존성을 주입을 지원하고 생명 주기를 자동으로 관리한다.
+
+
+### SAF(Storage Access Framework)
+[SAF  |  Android Developers](https://developer.android.com/guide/topics/providers/document-provider?hl=ko)
+
+SAF는 사용자가 선호하는 문서 저장소 제공자 전체에서 문서, 이미지 및 각종 다른 파일을 탐색하고 여는 작업을 간편하게 해준다. 일관된 방식으로 selector UI 를 사용하여 사용자에게 쉬운 UI 제공한다.
+
+### Photo Picker 사용하기
+[Photo Picker  |  Android Developers](https://developer.android.com/training/data-storage/shared/photopicker?hl=ko)
+
+Android 13(TIRAMISU, API 33) 부터 사용이 가능하다. Photo Picker 의 이점은 SAF와 달리 새로운 UI를 제공하며, 해당 버전보다 아래라면 자동으로 SAF를 진행한다.
+
+### Tip: 이미지 처리
+안드로이드 앱에서 이미지를 저장하거나 불러올 때 사용할 수 있는 데이터 유형은 Uri 이다. 앱의 이미지 경로인데, 아래의 실습에서는 간단하게 이 Uri를 DB에 저장해서 사용했다. 하지만 서버에 이미지를 전달해주기 위해서 Retrofit 의 Multi part를 사용한다. 나중에 서버와 통신을 위해서 이미지 처리를 하고 싶다면 Multi part에 대해서 공부해보는 것도 좋은 방법이다.
+
+### Tip: 여러가지 DI
+- Dagger
+- Hilt
+- Koin 
+
+### 🐼 실습 : 단어장 + 이미지 추가
+
+<img src="./참조 파일/chapter13_practice1.gif" width="175" height="350">
+<img src="./참조 파일/chapter13_practice2.gif" width="175" height="350">
+
+## 🚀 14. 
+
+### 🐼 실습 : 
+
+<img src="./참조 파일/chapter14_practice1.gif" width="175" height="350">
+<img src="./참조 파일/chapter14_practice2.gif" width="175" height="350">
